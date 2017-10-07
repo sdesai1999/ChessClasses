@@ -26,33 +26,22 @@ public class King extends Piece {
         char downRank = (char) (currentRankInt - 1);
         char leftFile = (char) (currentFileInt - 1);
         char rightFile = (char) (currentFileInt + 1);
-        if (currentFile != 'a') {
-            moveStr = moveStr + leftFile + currentRank + " ";
-            if (currentRank != '8') {
-                moveStr = moveStr + leftFile + upRank + " ";
-            }
 
-            if (currentRank != '1') {
-                moveStr = moveStr + leftFile + downRank + " ";
-            }
-        }
+        String move1 = "" + leftFile + upRank;
+        String move2 = "" + leftFile + currentRank;
+        String move3 = "" + leftFile + downRank;
+        String move4 = "" + currentFile + upRank;
+        String move5 = "" + currentFile + downRank;
+        String move6 = "" + rightFile + upRank;
+        String move7 = "" + rightFile + currentRank;
+        String move8 = "" + rightFile + downRank;
 
-        if (currentRank != '8') {
-            moveStr  = moveStr +  currentFile + upRank + " ";
-        }
+        String[] tmpMovesArr = {move1, move2, move3, move4, move5, move6, move7,
+                                move8};
 
-        if (currentRank != '1') {
-            moveStr = moveStr + currentFile + downRank + " ";
-        }
-
-        if (currentFile != 'h') {
-            moveStr = moveStr + rightFile + currentRank + " ";
-            if (currentRank != '8') {
-                moveStr = moveStr + rightFile + upRank + " ";
-            }
-
-            if (currentRank != '1') {
-                moveStr = moveStr + rightFile + downRank + " ";
+        for (int i = 0; i < tmpMovesArr.length; i++) {
+            if ((new Square(tmpMovesArr[i])).isValidSquare()) {
+                moveStr = moveStr + tmpMovesArr[i] + " ";
             }
         }
 
@@ -66,24 +55,3 @@ public class King extends Piece {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

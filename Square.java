@@ -39,6 +39,20 @@ public class Square {
         return false;
     }
 
+    public boolean isValidSquare() {
+        if (this.name.length() > 2) {
+            return false;
+        }
+
+        int aFile = this.file - 0;
+        int aRank = this.rank - 0;
+        if ((aFile < 97) || (aFile > 104) || (aRank < 49) || (aRank > 56)) {
+            return false;
+        }
+
+        return true;
+    }
+
     public char getFile() {
         return this.file;
     }
