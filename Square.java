@@ -5,13 +5,13 @@ public class Square {
     private String name;
 
     public Square(char file, char rank) {
-        this.file = file;
-        this.rank = rank;
-        this.name = "" + this.file + this.rank;
+        this(new String("" + file + rank));
     }
 
     public Square(String name) {
-        this(name.charAt(0), name.charAt(1));
+        this.name = name;
+        this.file = name.charAt(0);
+        this.rank = name.charAt(1);
     }
 
     public String toString() {

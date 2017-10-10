@@ -1,6 +1,6 @@
 public abstract class Piece {
 
-    protected Color color;
+    private Color color;
 
     public Piece(Color color) {
         this.color = color;

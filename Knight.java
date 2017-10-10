@@ -9,7 +9,7 @@ public class Knight extends Piece {
     }
 
     public String fenName() {
-        if (color == Color.WHITE) {
+        if (super.getColor() == Color.WHITE) {
             return "N";
         } else {
             return "n";

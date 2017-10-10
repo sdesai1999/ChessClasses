@@ -9,7 +9,7 @@ public class Rook extends Piece {
     }
 
     public String fenName() {
-        if (color == Color.WHITE) {
+        if (super.getColor() == Color.WHITE) {
             return "R";
         } else {
             return "r";
@@ -20,10 +20,7 @@ public class Rook extends Piece {
         String moveStr = "";
         char pieceRank = square.getRank();
         char pieceFile = square.getFile();
-        int pieceRankInt = pieceRank - 0;
-        int pieceFileInt = pieceFile - 0;
 
-        String currentSquare = "";
         char fileToAdd = ' ';
         for (int i = 0; i < 8; i++) {
             fileToAdd = (char) (97 + i);

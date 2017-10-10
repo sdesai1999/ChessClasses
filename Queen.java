@@ -1,18 +1,18 @@
-public class Bishop extends Piece {
+public class Queen extends Piece {
 
-    public Bishop(Color color) {
+    public Queen(Color color) {
         super(color);
     }
 
     public String algebraicName() {
-        return "B";
+        return "Q";
     }
 
     public String fenName() {
         if (super.getColor() == Color.WHITE) {
-            return "B";
+            return "Q";
         } else {
-            return "b";
+            return "q";
         }
     }
 
@@ -20,10 +20,27 @@ public class Bishop extends Piece {
         String moveStr = "";
         char pieceRank = square.getRank();
         char pieceFile = square.getFile();
+
+        // horizontal
+        char fileToAdd = ' ';
+        for (int i = 0; i < 8; i++) {
+            fileToAdd = (char) (97 + i);
+            if (fileToAdd != pieceFile) {
+                moveStr = moveStr + fileToAdd + pieceRank + " ";
+            }
+        }
+
+        // vertical
+        char rankToAdd = ' ';
+        for (int i = 0; i < 8; i++) {
+            rankToAdd = (char) (49 + i);
+            if (rankToAdd != pieceRank) {
+                moveStr = moveStr + pieceFile + rankToAdd + " ";
+            }
+        }
+
         final int rankInt = pieceRank - 0;
         final int fileInt = pieceFile - 0;
-
-        char rankToAdd, fileToAdd;
 
         // down left diagonal
         int rankPointer = rankInt - 1;

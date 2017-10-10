@@ -9,7 +9,7 @@ public class Pawn extends Piece {
     }
 
     public String fenName() {
-        if (color == Color.WHITE) {
+        if (super.getColor() == Color.WHITE) {
             return "P";
         } else {
             return "p";
@@ -28,7 +28,7 @@ public class Pawn extends Piece {
         char down2Ranks = (char) (currentRankInt - 2);
         String move1 = "", move2 = "";
 
-        if (color == Color.WHITE) {
+        if (super.getColor() == Color.WHITE) {
             move1 = "" + currentFile + up1Rank;
             if ((new Square(move1)).isValidSquare()) {
                 moveStr = moveStr + move1 + " ";

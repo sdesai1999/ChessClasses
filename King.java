@@ -9,7 +9,7 @@ public class King extends Piece {
     }
 
     public String fenName() {
-        if (color == Color.WHITE) {
+        if (super.getColor() == Color.WHITE) {
             return "K";
         } else {
             return "k";
