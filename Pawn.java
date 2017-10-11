@@ -1,13 +1,27 @@
+/**
+ * Represents a specific chess Piece called a Pawn.
+ * A pawn can move one square forward, or two squares forward if the Pawn hasn't
+ * moved yet.
+ *
+ * @author sdesai88
+*/
 public class Pawn extends Piece {
 
+    /**
+     * Creates a Pawn with a specific color.
+     *
+     * @param color : a Color (either black or white)
+    */
     public Pawn(Color color) {
         super(color);
     }
 
+    @Override
     public String algebraicName() {
         return "";
     }
 
+    @Override
     public String fenName() {
         if (super.getColor() == Color.WHITE) {
             return "P";
@@ -16,6 +30,7 @@ public class Pawn extends Piece {
         }
     }
 
+    @Override
     public Square[] movesFrom(Square square) {
         String moveStr = "";
         char currentRank = square.getRank();
@@ -65,8 +80,3 @@ public class Pawn extends Piece {
         return squareArr;
     }
 }
-
-
-
-
-

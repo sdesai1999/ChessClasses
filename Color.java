@@ -1,3 +1,16 @@
+/**
+ * Represents the two colors a chess piece can be.
+ *
+ * @author sdesai88
+*/
 public enum Color {
-    WHITE, BLACK;
+    /**
+     * white color
+    */
+    WHITE,
+
+    /**
+     * black color
+    */
+    BLACK;
 }

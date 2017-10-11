@@ -1,13 +1,26 @@
+/**
+ * Represents a specific chess Piece called a Queen.
+ * A Queen can move diagonally, vertically, and horizontally.
+ *
+ * @author sdesai88
+*/
 public class Queen extends Piece {
 
+    /**
+     * Creates a Queen with a specific color.
+     *
+     * @param color : a Color (either black or white)
+    */
     public Queen(Color color) {
         super(color);
     }
 
+    @Override
     public String algebraicName() {
         return "Q";
     }
 
+    @Override
     public String fenName() {
         if (super.getColor() == Color.WHITE) {
             return "Q";
@@ -16,6 +29,7 @@ public class Queen extends Piece {
         }
     }
 
+    @Override
     public Square[] movesFrom(Square square) {
         String moveStr = "";
         char pieceRank = square.getRank();
@@ -41,6 +55,9 @@ public class Queen extends Piece {
 
         final int rankInt = pieceRank - 0;
         final int fileInt = pieceFile - 0;
+
+        // '1' as an int is 49 & 'a' as an int is 97
+        // '8' as an int is 56 & 'h' as in ant is 104
 
         // down left diagonal
         int rankPointer = rankInt - 1;

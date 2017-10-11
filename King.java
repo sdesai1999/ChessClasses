@@ -1,13 +1,26 @@
+/**
+ * Represents a specific chess Piece called a King.
+ * A King can move one square in any direction.
+ *
+ * @author sdesai88
+*/
 public class King extends Piece {
 
+    /**
+     * Creates a King with a specific color.
+     *
+     * @param color : a Color (either black or white)
+    */
     public King(Color color) {
         super(color);
     }
 
+    @Override
     public String algebraicName() {
         return "K";
     }
 
+    @Override
     public String fenName() {
         if (super.getColor() == Color.WHITE) {
             return "K";
@@ -16,6 +29,7 @@ public class King extends Piece {
         }
     }
 
+    @Override
     public Square[] movesFrom(Square square) {
         String moveStr = "";
         char currentRank = square.getRank();
@@ -53,5 +67,4 @@ public class King extends Piece {
 
         return squareArr;
     }
-
 }

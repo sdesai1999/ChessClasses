@@ -1,13 +1,27 @@
+/**
+ * Represents a specific chess Piece called a Knight.
+ * A Knight can move two squares horizontally and one square vertically, or vice
+ * versa. Knights can jump over other pieces.
+ *
+ * @author sdesai88
+*/
 public class Knight extends Piece {
 
+    /**
+     * Creates a Knight with a specific color.
+     *
+     * @param color : a Color (either black or white)
+    */
     public Knight(Color color) {
         super(color);
     }
 
+    @Override
     public String algebraicName() {
         return "N";
     }
 
+    @Override
     public String fenName() {
         if (super.getColor() == Color.WHITE) {
             return "N";
@@ -16,6 +30,7 @@ public class Knight extends Piece {
         }
     }
 
+    @Override
     public Square[] movesFrom(Square square) {
         String moveStr = "";
         char currentRank = square.getRank();
@@ -56,6 +71,5 @@ public class Knight extends Piece {
         }
 
         return squareArr;
-
     }
 }

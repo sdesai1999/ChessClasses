@@ -1,13 +1,26 @@
+/**
+ * Represents a specific chess Piece called a Bishop.
+ * A Bishop can move diagonally.
+ *
+ * @author sdesai88
+*/
 public class Bishop extends Piece {
 
+    /**
+     * Creates a Bishop with a specific color.
+     *
+     * @param color : a Color (either black or white)
+    */
     public Bishop(Color color) {
         super(color);
     }
 
+    @Override
     public String algebraicName() {
         return "B";
     }
 
+    @Override
     public String fenName() {
         if (super.getColor() == Color.WHITE) {
             return "B";
@@ -16,6 +29,7 @@ public class Bishop extends Piece {
         }
     }
 
+    @Override
     public Square[] movesFrom(Square square) {
         String moveStr = "";
         char pieceRank = square.getRank();
@@ -24,6 +38,9 @@ public class Bishop extends Piece {
         final int fileInt = pieceFile - 0;
 
         char rankToAdd, fileToAdd;
+
+        // '1' as an int is 49 & 'a' as an int is 97
+        // '8' as an int is 56 & 'h' as in ant is 104
 
         // down left diagonal
         int rankPointer = rankInt - 1;
