@@ -2,6 +2,7 @@
  * Represents any chess piece.
  *
  * @author sdesai88
+ * @version 10/11/17
 */
 public abstract class Piece {
 

@@ -2,6 +2,7 @@
  * Represents a square on an 8x8 chessboard.
  *
  * @author sdesai88
+ * @version 10/11/17
 */
 public class Square {
 

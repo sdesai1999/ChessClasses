@@ -3,6 +3,7 @@
  * A King can move one square in any direction.
  *
  * @author sdesai88
+ * @version 10/11/17
 */
 public class King extends Piece {
 

@@ -4,6 +4,7 @@
  * versa. Knights can jump over other pieces.
  *
  * @author sdesai88
+ * @version 10/11/17
 */
 public class Knight extends Piece {
 

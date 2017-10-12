@@ -3,6 +3,7 @@
  * A Queen can move diagonally, vertically, and horizontally.
  *
  * @author sdesai88
+ * @version 10/11/17
 */
 public class Queen extends Piece {
 

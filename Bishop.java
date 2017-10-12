@@ -3,6 +3,7 @@
  * A Bishop can move diagonally.
  *
  * @author sdesai88
+ * @version 10/11/17
 */
 public class Bishop extends Piece {
 

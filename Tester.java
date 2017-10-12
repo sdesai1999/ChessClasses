@@ -1,12 +1,30 @@
 import java.util.Arrays;
 
+/**
+ * Tests the classes created for hw2
+ *
+ * @author sdesai88
+ * @version 10/11/17
+*/
 public class Tester {
+
+    /**
+     * main method for Tester class
+     *
+     * @param args : command line arguments
+    */
     public static void main(String[] args) {
         Square h6 = new Square("h6");
         Square d3 = new Square('d', '3');
         Square newSq = new Square("d3");
         assert newSq.equals(d3);
         assert !newSq.equals(h6);
+
+        Square a1 = new Square('a', '1');
+        Square newA1 = new Square("a1");
+        Square b1 = new Square("b1");
+        assert !a1.equals(b1);
+        assert newA1.equals(a1);
 
         // CREATING A KING
         Piece king = new King(Color.WHITE);
@@ -19,7 +37,7 @@ public class Tester {
         Piece wPawn = new Pawn(Color.WHITE);
         assert wPawn.algebraicName().equals("");
         assert wPawn.fenName().equals("P");
-        Square[] wPawnSquares = wPawn.movesFrom(new Square("a7"));
+        Square[] wPawnSquares = wPawn.movesFrom(new Square("e2"));
         System.out.printf("White Pawn: %s%n", Arrays.toString(wPawnSquares));
 
         // CREATING A BLACK PAWN
@@ -33,7 +51,7 @@ public class Tester {
         Piece knight = new Knight(Color.WHITE);
         assert knight.algebraicName().equals("N");
         assert !knight.fenName().equals("n");
-        Square[] knightSquares = knight.movesFrom(new Square("g1"));
+        Square[] knightSquares = knight.movesFrom(new Square("d4"));
         System.out.printf("White Knight: %s%n", Arrays.toString(knightSquares));
 
         // CREATING A ROOK
@@ -47,14 +65,14 @@ public class Tester {
         Piece bishop = new Bishop(Color.WHITE);
         assert bishop.algebraicName().equals("B");
         assert !bishop.fenName().equals("b");
-        Square[] bishopSquares = bishop.movesFrom(new Square('g', '7'));
+        Square[] bishopSquares = bishop.movesFrom(new Square('g', '3'));
         System.out.printf("White Bishop: %s%n", Arrays.toString(bishopSquares));
 
         // CREATING A QUEEN
         Piece queen = new Queen(Color.BLACK);
         assert !queen.algebraicName().equals("q");
         assert queen.fenName().equals("q");
-        Square[] queenSquares = queen.movesFrom(new Square('e', '2'));
+        Square[] queenSquares = queen.movesFrom(new Square('b', '1'));
         System.out.printf("Black Queen: %s%n", Arrays.toString(queenSquares));
 
         System.out.println();
