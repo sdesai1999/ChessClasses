@@ -36,6 +36,7 @@ public class Rook extends Piece {
         char pieceRank = square.getRank();
         char pieceFile = square.getFile();
 
+        // horizontal
         char fileToAdd = ' ';
         for (int i = 0; i < 8; i++) {
             fileToAdd = (char) (97 + i);
@@ -44,6 +45,7 @@ public class Rook extends Piece {
             }
         }
 
+        // vertical
         char rankToAdd = ' ';
         for (int i = 0; i < 8; i++) {
             rankToAdd = (char) (49 + i);

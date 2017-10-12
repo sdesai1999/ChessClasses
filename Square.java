@@ -34,6 +34,7 @@ public class Square {
     /**
      * @return the name of the Square
     */
+    @Override
     public String toString() {
         return this.name;
     }
@@ -45,6 +46,7 @@ public class Square {
      * @param other : any Object
      * @return true if the Squares are the same, false otherwise
     */
+    @Override
     public boolean equals(Object other) {
         if (this == other) {
             return true;
